@@ -7,24 +7,87 @@
     <title>Modal</title>
 </head>
 <body>
-    <button class="show-modal">Show modal 1</button>
-    <button class="show-modal">Show modal 2</button>
-    <button class="show-modal">Show modal 3</button>
+  <header>
+   <button id="toggleButton"></button>
+  </header>
+  <div class="btns">
+    <button class="show-modal" id="showModal1">Show modal 1</button>
+    <button class="show-modal" id="showModal2">Show modal 2</button>
+    <button class="show-modal" id="showModal3">Show modal 3</button>
+    <button class="show-modal" id="showModal4">Show modal 4</button>
+    <button class="show-modal" id="showModal5">Show modal 5</button>
+    <button class="show-modal" id="showModal6">Show modal 6</button>
+  </div>
 
-    <div class="modal hidden">
+    <div class="modal hidden" id="modal1">
       <button class="close-modal">&times;</button>
-      <h1>I'm a modal window 😍</h1>
+      <h1>KNOW YOUR AUDIENCE</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        Understand your target audience, Identify the
+        technical expertise of your audience and their
+        level of understanding. Tailor your content to
+        resonate with your audience. For example, if your
+        target audience is newbies, look for topics that
+        are a bit confusing or you once have a problem
+        with them and write on them. 
       </p>
     </div>
-    
+    <div class="modal hidden" id="modal2">
+      <button class="close-modal">&times;</button>
+      <h1>RESEARCH AND STUDY</h1>
+      <p>
+        Research and study your topic
+ thoroughly. This will aid you in
+ explaining it better and providing
+ examples to reinforce your point.
+      </p>
+    </div>
+    <div class="modal hidden" id="modal3">
+      <button class="close-modal">&times;</button>
+      <h1>ADOPT A STYLE</h1>
+      <p>
+        Adopting a style in writing refers to
+        consciously selecting and consistently
+        using a particular set of linguistic and
+        structural elements to convey information
+        or express ideas e.g. Storytelling, GIFs,
+        Lingo(GM, WAGMI etc) etc
+      </p>
+    </div>
+    <div class="modal hidden" id="modal4">
+      <button class="close-modal">&times;</button>
+      <h1>VISUAL ELEMENTS</h1>
+      <p>
+        This involves using graphical
+ illustrations, videos, and pictures to
+ effectively communicate with your
+ audience. For instance, the image below
+ provides a step-by-step guide on how to
+ run a web application.
+      </p>
+    </div>
+    <div class="modal hidden" id="modal5">
+      <button class="close-modal">&times;</button>
+      <h1>INCLUDE USE CASES /EXAMPLES</h1>
+      <p>
+        Absolutely! Using examples and cases to
+        support your point is crucial. It helps the
+        reader to grasp a better understanding of
+        the message you are trying to convey. So,
+        always remember to include relevant
+        examples in your articles.
+      </p>
+    </div>
+    <div class="modal hidden" id="modal6">
+      <button class="close-modal">&times;</button>
+      <h1>SHARE</h1>
+      <p>
+        share your articles across all
+ platforms. Don’t wait for anyone to do
+ that for you including Discord
+ channels, WhatsApp groups etc
+     </p>
+    </div>
     <div class="overlay hidden"></div>
 
     <script src="script.js"></script>

@@ -14,13 +14,57 @@
     color: #333;
     line-height: 1.5;
     height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
     background: linear-gradient(to top left, #28b487, #7dd56f);
   }
+  header button {
+    width: 50px;
+    height: 25px;
+    margin: 20px;
+    border: none;
+    border-radius: 15%;
+    position: relative;
+    background-color: black;
+    cursor: pointer;
+  }
   
+  header button::before {
+    content: '';
+    position: absolute;
+    top: 2.5px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  header button.btn-toggle {
+    background-color: white;
+  }
+  
+  header button.btn-toggle::before {
+    /* transform: translateX(30px); */
+    left: 30px;
+
+    background-color: black;
+  }
+  
+  body.btn-toggle {
+    background: black;
+    
+  }
+  
+.btns{
+    position: relative;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
   .show-modal {
     font-size: 2rem;
     font-weight: 600;
@@ -32,7 +76,10 @@
     border-radius: 10rem;
     cursor: pointer;
   }
-  
+  .show-modal:hover{
+    background-color: #444;
+    color:#fff ;
+  }
   .close-modal {
     position: absolute;
     top: 1.2rem;
@@ -65,21 +112,23 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70%;
-  
     background-color: white;
     padding: 6rem;
-    border-radius: 5px;
+    border-radius: 20px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
     z-index: 10;
   }
-  
+  .modal.btn-toggle{
+    background-color: black;
+    color: #fff;
+  }
   .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(3px);
-    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.644);
+    backdrop-filter: blur(10px);
+    /* z-index: 5; */
   }
