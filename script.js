@@ -41,20 +41,20 @@ window.addEventListener('load', () => {
     const savedState = localStorage.getItem('toggleState') === 'true';
     const toggleState = document.body.classList.contains('btn-toggle');
 
-    if (savedState && !toggleState) {
-        document.body.classList.add('btn-toggle');
-        toggleButton.classList.add('btn-toggle');
+    if (savedState && !toggleState || !savedState && toggleState ) {
+        document.body.classList.toggle('btn-toggle');
+        toggleButton.classList.toggle('btn-toggle');
 
         document.querySelectorAll('.modal').forEach((modal) => {
-            modal.classList.add('btn-toggle');
+            modal.classList.toggle('btn-toggle');
         });
-    } else if (!savedState && toggleState) {
-        document.body.classList.remove('btn-toggle');
-        toggleButton.classList.remove('btn-toggle');
+    // } else if (!savedState && toggleState) {
+    //     document.body.classList.remove('btn-toggle');
+    //     toggleButton.classList.remove('btn-toggle');
 
-        document.querySelectorAll('.modal').forEach((modal) => {
-            modal.classList.remove('btn-toggle');
-        });
+    //     document.querySelectorAll('.modal').forEach((modal) => {
+    //         modal.classList.remove('btn-toggle');
+    //     });
     }
 });
 showModal1.addEventListener('click', () => {
