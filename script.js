@@ -16,14 +16,7 @@ const showModal5 = document.querySelector('#showModal5');
 const showModal6 = document.querySelector('#showModal6');
 const toggleButton = document.getElementById('toggleButton');
 
-// toggleButton.addEventListener('click', () => {
-//     document.body.classList.toggle('btn-toggle');
-//     toggleButton.classList.toggle('btn-toggle');
 
-//     document.querySelectorAll('.modal').forEach((modal) => {
-//         modal.classList.toggle('btn-toggle');
-//     });
-// });
 toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('btn-toggle');
     toggleButton.classList.toggle('btn-toggle');
