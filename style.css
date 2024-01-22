@@ -17,11 +17,11 @@
     background: linear-gradient(to top left, #28b487, #7dd56f);
   }
   header button {
-    width: 50px;
-    height: 25px;
+    width: 40px;
+    height: 20px;
     margin: 20px;
     border: none;
-    border-radius: 15%;
+    border-radius: 30%;
     position: relative;
     background-color: black;
     cursor: pointer;
@@ -30,14 +30,14 @@
   header button::before {
     content: '';
     position: absolute;
-    top: 2.5px;
+    top: 2.4px;
     left: 0;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border: none;
     border-radius: 50%;
     background-color: white;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.6s ease-in-out;
   }
   
   header button.btn-toggle {
@@ -45,9 +45,7 @@
   }
   
   header button.btn-toggle::before {
-    /* transform: translateX(30px); */
-    left: 30px;
-
+    transform: translateX(25px);
     background-color: black;
   }
   

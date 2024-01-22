@@ -48,13 +48,6 @@ window.addEventListener('load', () => {
         document.querySelectorAll('.modal').forEach((modal) => {
             modal.classList.toggle('btn-toggle');
         });
-    // } else if (!savedState && toggleState) {
-    //     document.body.classList.remove('btn-toggle');
-    //     toggleButton.classList.remove('btn-toggle');
-
-    //     document.querySelectorAll('.modal').forEach((modal) => {
-    //         modal.classList.remove('btn-toggle');
-    //     });
     }
 });
 showModal1.addEventListener('click', () => {
