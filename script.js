@@ -83,3 +83,36 @@ btnCloseModal.forEach(btn => btn.addEventListener('click', () =>{
     modal6.classList.add('hidden');
     overlay.classList.add('hidden');
 }));
+
+document.addEventListener('keydown', (e) =>{
+    switch(e.key){ 
+        case 'Escape':
+            console.log(e.key);
+            if(!modal1.classList.contains('hidden')){
+                modal1.classList.add('hidden');
+                overlay.classList.add('hidden');
+            }
+            if(!modal2.classList.contains('hidden')){
+                modal2.classList.add('hidden');
+                overlay.classList.add('hidden');
+            }
+            if(!modal3.classList.contains('hidden')){
+                modal3.classList.add('hidden');
+                overlay.classList.add('hidden');
+            }
+            if(!modal4.classList.contains('hidden')){
+                modal4.classList.add('hidden');
+                overlay.classList.add('hidden');
+            }
+            if(!modal5.classList.contains('hidden')){
+                modal5.classList.add('hidden');
+                overlay.classList.add('hidden');
+            }
+            if(!modal6.classList.contains('hidden')){
+                modal6.classList.add('hidden');
+                overlay.classList.add('hidden');
+            }
+            break;
+           
+    }
+})
