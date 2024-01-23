@@ -16,8 +16,9 @@ const showModal5 = document.querySelector('#showModal5');
 const showModal6 = document.querySelector('#showModal6');
 const toggleButton = document.getElementById('toggleButton');
 
+const all = [modal1, modal2, modal3, modal4, modal5, modal6];
 
-toggleButton.addEventListener('click', () => {
+const handleButtonClick = () => {
     document.body.classList.toggle('btn-toggle');
     toggleButton.classList.toggle('btn-toggle');
 
@@ -27,92 +28,74 @@ toggleButton.addEventListener('click', () => {
 
     // Save the current state to localStorage
     localStorage.setItem('toggleState', document.body.classList.contains('btn-toggle') ? 'true' : 'false');
-});
+};
+
+toggleButton.addEventListener('click', handleButtonClick)
 
 // On page load, check the saved state and update the page accordingly
 window.addEventListener('load', () => {
     const savedState = localStorage.getItem('toggleState') === 'true';
     const toggleState = document.body.classList.contains('btn-toggle');
 
-    if (savedState && !toggleState || !savedState && toggleState ) {
-        document.body.classList.toggle('btn-toggle');
-        toggleButton.classList.toggle('btn-toggle');
+    if (savedState !== toggleState) {
+       handleButtonClick();
+    }
+});
 
-        document.querySelectorAll('.modal').forEach((modal) => {
-            modal.classList.toggle('btn-toggle');
+// showModal1.addEventListener('click', () => {
+//     modal1.classList.remove('hidden');
+//     overlay.classList.remove('hidden');
+// });
+
+// showModal2.addEventListener('click', () => {
+//     modal2.classList.remove('hidden');
+//     overlay.classList.remove('hidden');
+// });
+
+// showModal3.addEventListener('click', () => {
+//     modal3.classList.remove('hidden');
+//     overlay.classList.remove('hidden');
+// });
+
+// showModal4.addEventListener('click', () => {
+//     modal4.classList.remove('hidden');
+//     overlay.classList.remove('hidden');
+// });
+
+// showModal5.addEventListener('click', () => {
+//     modal5.classList.remove('hidden');
+//     overlay.classList.remove('hidden');
+// });
+
+// showModal6.addEventListener('click', () => {
+//     modal6.classList.remove('hidden');
+//     overlay.classList.remove('hidden');
+// });
+
+const showModalButtons = [showModal1, showModal2, showModal3, showModal4, showModal5, showModal6];
+
+showModalButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(`#modal${index + 1}`);
+        modal.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+    });
+});
+
+btnCloseModal.forEach(btn => btn.addEventListener('click', () =>{
+    all.forEach((modal) => {
+        modal.classList.add('hidden');
+        overlay.classList.add('hidden');
+    })
+}));
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+     all.forEach((modal) => {
+            if (!modal.classList.contains('hidden')) {
+                modal.classList.add('hidden');
+                overlay.classList.add('hidden');
+            }
         });
     }
 });
-showModal1.addEventListener('click', () => {
-    modal1.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-});
-
-showModal2.addEventListener('click', () => {
-    modal2.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-});
-
-showModal3.addEventListener('click', () => {
-    modal3.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-});
-
-showModal4.addEventListener('click', () => {
-    modal4.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-});
-
-showModal5.addEventListener('click', () => {
-    modal5.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-});
-
-showModal6.addEventListener('click', () => {
-    modal6.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-});
-
-
-btnCloseModal.forEach(btn => btn.addEventListener('click', () =>{
-    modal1.classList.add('hidden');
-    modal2.classList.add('hidden');
-    modal3.classList.add('hidden');
-    modal4.classList.add('hidden');
-    modal5.classList.add('hidden');
-    modal6.classList.add('hidden');
-    overlay.classList.add('hidden');
-}));
-
-document.addEventListener('keydown', (e) =>{
-    switch(e.key){ 
-        case 'Escape':
-            console.log(e.key);
-            if(!modal1.classList.contains('hidden')){
-                modal1.classList.add('hidden');
-                overlay.classList.add('hidden');
-            }
-            if(!modal2.classList.contains('hidden')){
-                modal2.classList.add('hidden');
-                overlay.classList.add('hidden');
-            }
-            if(!modal3.classList.contains('hidden')){
-                modal3.classList.add('hidden');
-                overlay.classList.add('hidden');
-            }
-            if(!modal4.classList.contains('hidden')){
-                modal4.classList.add('hidden');
-                overlay.classList.add('hidden');
-            }
-            if(!modal5.classList.contains('hidden')){
-                modal5.classList.add('hidden');
-                overlay.classList.add('hidden');
-            }
-            if(!modal6.classList.contains('hidden')){
-                modal6.classList.add('hidden');
-                overlay.classList.add('hidden');
-            }
-            break;
-           
-    }
-})
